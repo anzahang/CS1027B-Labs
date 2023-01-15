@@ -1,0 +1,25 @@
+Answers for Lab 1
+------------------
+EXERCISE 2
+1. What do you think is the information that System.out.println(p1) prints on the screen?
+The information that System.out.println(p1) prints on the screen is the default toString() method of the Player class which returns only the memory address of the object.
+
+EXERCISE 3
+2. How many lines of text are printed? 
+3 lines of text are printed.
+
+EXERCISE 4
+3. How many error messages are printed by the compiler when javac is invoked for the first time?
+This code would return 2 error messages by the compiler when javac is invoked for the first time.
+
+4. After deleting the extra character in line 16, what is the error that the compiler finds?
+The error that would be found when this code is run in terminal is on line 20, where the variable "bit" is being assigned a string "0" instead of an int 0. 
+Since the variable bit is an int, it should be assigned an int value, not a string.
+
+5. How many bits are printed by the program?
+8 bits are printed by the program.
+
+EXERCISE 5
+
+4. Which class is displayed on the browser?
+TestLab1 is displayed on the browser.

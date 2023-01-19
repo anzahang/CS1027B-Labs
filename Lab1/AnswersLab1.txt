@@ -12,9 +12,13 @@ EXERCISE 4
 3. How many error messages are printed by the compiler when javac is invoked for the first time?
 This code would return 2 error messages by the compiler when javac is invoked for the first time.
 
-4. After deleting the extra character in line 16, what is the error that the compiler finds?
+4. After deleting the extra character in line 20, what is the error that the compiler finds?
 The error that would be found when this code is run in terminal is on line 20, where the variable "bit" is being assigned a string "0" instead of an int 0. 
 Since the variable bit is an int, it should be assigned an int value, not a string.
+The error is the following: 
+Exercise4.java:22: error: incompatible types: String cannot be converted to int
+                bit = "0";
+1 error
 
 5. How many bits are printed by the program?
 8 bits are printed by the program.
@@ -22,4 +26,4 @@ Since the variable bit is an int, it should be assigned an int value, not a stri
 EXERCISE 5
 
 4. Which class is displayed on the browser?
-TestLab1 is displayed on the browser.
+The Player class(Player.java) is displayed on the browser.

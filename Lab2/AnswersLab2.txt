@@ -20,6 +20,7 @@ One of my answers were incorrect in question 1.
 3. Why was the result of the last comparison true, even though arrays are non-primitive types?
 In the code, both data1.varA.arrItems and data2.varA.arrItems are assigned the same array object, testArray, which is created outside the DataTypes class. 
 Therefore, data1.varA.arrItems and data2.varA.arrItems both reference the same array object in memory, so the comparison data1.varA.arrItems == data2.varA.arrItems returns true
+
 EXERCISE 3
 
 4. What causes the first compilation error?
@@ -31,6 +32,6 @@ Since the main method is static, it cannot access non-static fields directly. To
 EXERCISE 4
 
 5. Why does program CountObjects prints a message indicating that only one object was created, even though the program created more than one object of class ClassC?
-The class CountObjects only outputs a message indicating that only one object was created because the program is only keeping track of the number of objects created by the counter variable in the last instance of ClassC that was created. 
-Each time a new instance of ClassC is created, the previous instance's counter variable is overwritten with a new value of 1. 
+The class CountObjects only outputs a message indicating that only one object was created because the program is only keeping track of the number of objects created 
+by the counter variable in the last instance of ClassC that was created. Each time a new instance of ClassC is created, the previous instance's counter variable is overwritten with a new value of 1. 
 As a result, the program only keeps track of the number of objects created by the last instance of ClassC and not the total number of objects created throughout the program.

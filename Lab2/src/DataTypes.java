@@ -7,6 +7,16 @@ public class DataTypes {
 
 	public DataTypes() {
 	}
+	public boolean equals(DataTypes otherObject) {
+        if (this.intVar != otherObject.intVar 
+            || this.doubleVar != otherObject.doubleVar 
+            || this.charVar != otherObject.charVar 
+            || this.boolVar != otherObject.boolVar 
+            || !this.varA.equals(otherObject.varA)) {
+            return false;
+        }
+        return true;
+    }
 
 	public DataTypes(int newIntVar, double newDoubleVar, char newCharVar, boolean newBoolVar, ClassA newVarA) {
 		intVar = newIntVar;

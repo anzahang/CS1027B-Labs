@@ -14,20 +14,19 @@ public class ClassA {
 		
 	}
 	public boolean equals(ClassA otherObject) {
-	    if (this.numItems != otherObject.numItems) {
-	        return false;
-	    }
-	    if (this.arrItems == null && otherObject.arrItems != null || this.arrItems != null && otherObject.arrItems == null) {
-	        return false;
-	    }
-	    if (this.arrItems != null && otherObject.arrItems != null) {
-	        for (int i = 0; i < this.numItems; i++) {
-	            if (this.arrItems[i] != otherObject.arrItems[i]) {
-	                return false;
-	            }
-	        }
-	    }
-	    return true;
-	}
-
+        if (this.numItems != otherObject.numItems) {
+            return false;
+        }
+        if (this.arrItems == null && otherObject.arrItems != null || this.arrItems != null && otherObject.arrItems == null) {
+            return false;
+        }
+        if (this.arrItems != null && otherObject.arrItems != null) {
+            for (int i = 0; i < this.numItems; i++) {
+                if (this.arrItems[i] != otherObject.arrItems[i]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
 }

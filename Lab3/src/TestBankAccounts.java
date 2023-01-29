@@ -23,8 +23,6 @@ public class TestBankAccounts {
 	    SavingsAccount sacc1 = new SavingsAccount(1000.0, 1.0);
 	    System.out.println(sacc1.toString()); 
 	    
-	    //-------------------------------------------------------
-	    // add your code here
 	    bacc0 = chacc1;
 	    // chacc1 = bacc1; // not legal
 	    

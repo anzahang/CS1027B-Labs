@@ -17,7 +17,7 @@ public class BankMachine {
             newAcc = new SavingsAccount(100, 0.14);
         } else {
             System.out.println("Invalid account type.");
-            return; // If bad input, then end program.
+            return; 
         }
 
         String accountInfo = newAcc.toString();

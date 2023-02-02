@@ -1,0 +1,56 @@
+Answers for Lab 3
+-----------------------------------------------
+
+EXERCISE 1
+
+1. Should instance variable interestRate be declared as static? Explain. No, the instance variable interestRate should not be declared as static. 
+Because static variables are shared among all instances of a class, it would not allow for each object of the SavingsAccount class to have its own unique interest rate.
+
+2. Write the output from the test for class SavingsAccount. The output from the test for class SavingsAccount would be: "SavingsAccount: balance $115, interest rate 0.15%".
+
+
+
+EXERCISE 2
+
+3. Which method(s) of the class CheckingAccount demonstrate overriding? Which methods demonstrate overloading? The method "deposit" and "withdraw" of the class CheckingAccount demonstrate overriding as 
+they have the same name and parameter list as the method of the same name in the super class BankAccount. The methods CheckingAccount(double initialAmount) and CheckingAccount() are examples of 
+method overloading as they are declared with the same name, but have different parameters while in the same class. 
+
+4. Is bacc0 = chacc1 legal? Why? Yes, bacc0 = chacc1 is legal. This is because in Java, an object of a subclass can be assigned to a variable of its superclass type. 
+The variable of the superclass type can then be used to access only the methods and fields defined in the superclass, not those of the subclass.
+
+5. Is chacc1 = bacc1 legal? Why? This is not legal because bacc1 is a BankAccount object, and a BankAccount object cannot be assigned to a CheckingAccount variable. 
+A CheckingAccount object has additional properties and methods not present in a BankAccount object.
+
+6. On which variables bacc1, chacc1, sacc1 was the invocation to method deductFees() valid? Explain. The method deductFees() can only be invoked on an instance of the class CheckingAccount as it is defined only in the 
+CheckingAccount class and not in the parent class BankAccount or the sibling class SavingsAccount. The variables bacc1, chacc1, and sacc1 could be any instances of BankAccount, CheckingAccount, and SavingsAccount, respectively, 
+and the invocation of deductFees() would only be valid on the chacc1 instance, as it is of type CheckingAccount.
+
+7. Which compilation error(s) could be fixed through casting? Which one(s) could not be fixed? Why? 
+The compilation error that could be fixed through casting is the assignment of the variable chacc1 to the variable bacc2. 
+The bacc2 variable is of type BankAccount but the chacc1 variable is of type CheckingAccount, so in order to make the assignment legal, 
+a casting is required to tell the compiler that the bacc2 variable is actually a CheckingAccount object.
+
+The other compilation errors, such as the assignment of chacc1 to bacc1 and the invocation of deductFees() method on variable bacc1, cannot be fixed through casting. 
+This is because the bacc1 variable is of type BankAccount and it does not have a deductFees() method, so it cannot be cast to a CheckingAccount or SavingsAccount object. 
+Similarly, the chacc1 variable is of type CheckingAccount, and it cannot be cast to a BankAccount object, because a CheckingAccount has different properties and methods than a BankAccount.
+In addition, sacc1 is of type SavingsAccount, and it cannot be casted to a BankAccount object, and this is because SavingsAccount has different attributes and methods in comparison to BankAccount. 
+
+8. Does the program run after commenting out the line causing the compilation error? If the program crashed, why did it crash? The program will not run after commenting out the line causing the compilation error because the line, 
+"((CheckingAccount)bacc1).deductFees();"causes a ClassCastException. It is trying to cast a SavingsAccount object to a CheckingAccount object, but the two classes are unrelated and cannot be casted.  
+So the program will crash at runtime when this line is executed. 
+
+
+
+
+EXERCISE 3
+
+9. Why does the compiler issue an error message when invoking newAcc.getTransactionCount()? Why does the compiler issue an error message when invoking newAcc.getInterestRate()? 
+The compiler is issuing errors because the methods getTransactionCount() and getInterestRate() are not defined in the BankAccount class,but are specific to the CheckingAccount and SavingsAccount subclasses, respectively. 
+Since newAcc is of type BankAccount, it does not have access to these methods.
+
+10. Can you tell whether in the statement String accountInfo = newAcc.toString(); the
+method toString() being invoked is from the class CheckingAccount or from the class
+SavingsAccount? Explain your answer. It is not possible to tell from the code whether the method toString() being invoked is from the SavingsAccount or CheckingAccount class by looking at the code, 
+because the type of newAcc is BankAccount, which is the superclass of both SavingsAccount and CheckingAccount, so it is not known at compile time which class's toString() method will be invoked. 
+This will be determined at runtime based on the input provided and the instantiation of the newAcc object.

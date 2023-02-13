@@ -1,0 +1,56 @@
+Answers for Lab 3
+-----------------------------------------------
+
+EXERCISE 1
+
+The exercise demonstrated a generic printer class. This example sent the wrapper class for primitives like integers, double values and terminated character arrays.
+Would the GenericPrinter class work on user created classes like Person?
+If so, then what would be printed out if the Person class did not have a toString method defined? 
+
+Yes, the GenericPrinter class would work with user-created classes like Person. 
+If you create an instance of the GenericPrinter class with type Person, and you run the print() method, 
+it would call the toString() method on the Person object and print its result to the console.
+If the Person class did not have a toString() method defined, the output would be the default representation of the object, 
+which is a string of the form className@hashCode, where className is the name of the class and hashCode is the hash code of the object.
+
+EXERCISE 2
+
+Write out your answer to the question 7. D.): 
+How many swaps must be made to correctly reverse the array? 
+
+To correctly reverse an array, the number of swaps required is half the number of elements in the array, rounded down. 
+For example, if the array has 5 elements, you would need 2 swaps (array[0] with array[4], array[1] with array[3]). If the array has an odd number of elements, 
+then you would need (n-1)/2 swaps, where n is the number of elements in the array.
+
+Would the code been more or less efficient if you used a second array and just copied the connects of each element into their new position 
+(i.e. original_array[0] to new_array[n], original_array[1] to new_array[n-1], original_array[2] to new_array[n-2], etc.) ?
+Explain your conclusion (why or why not). 
+
+Yes, creating a second array and copying elements from the original array to their new positions would be less efficient than swapping elements within the original array. 
+This is because creating a new array requires allocating additional memory, which takes up more space and takes more time than swapping elements within the same array. 
+Additionally, copying elements from one array to another requires more operations and takes more time than swapping elements within the same array.
+
+EXERCISE 3
+
+You were instructed to change the code to be more generic and to operate with any number of nodes, but were told that:
+You cannot change the method signature (parameters). You also cannot add instance variables to the class.
+If you were allowed to do this, what new instance variable would you add and to which class would you add this new instance variable? 
+
+If I were allowed to add an instance variable to the class, I would add an instance variable to the class BuildLinkedList to store the size of the linked list. 
+I would name this instance variable size and it would be of type int. This instance variable would keep track of the number of nodes in the linked list. 
+This information would allow us to make the code more generic and to operate with any number of nodes.
+
+EXERCISE 4
+
+In this exercise you were given a new class called DoubleLinkedNode. This class was different from the class used in Exercise 3 above.
+Could the class DoubleLinkedNode from this exercise be used in Exercise three in place of LinearNode without any other changes to the code in Exercise 3? (i.e ONLY: Search/Replace LinearNode with DoubleLinkedNode in the BuildLinkedList class.)
+If not, what other code would have to be changed?
+
+No, simply replacing LinearNode with DoubleLinkedNode will not work because the implementation of the two classes is different. DoubleLinkedNode has two references - one to the next node and one to the previous node, 
+while LinearNode has only one reference to the next node.
+
+In order to use DoubleLinkedNode in Exercise 3, you would need to modify the implementation of the printList method. 
+This is because the printList method assumes that the list is a single linked list and uses only the next reference to traverse the list.
+
+To modify the printList method, you would need to change the implementation to traverse the list in either direction, either from the first node to the last node or from the last node to the first node, 
+by using both the next and previous references. This way, the printList method would work correctly with a double linked list.

@@ -1,0 +1,171 @@
+Answers for Lab 6
+-----------------------------------------------
+
+EXERCISE 1
+----------
+
+1.
+a) What do you think would be printed after the first invocation to method1 (Line 43)? AF
+
+The method1() is invoked with an array of size 7 and an index 9 which is out of the array bounds.
+The execution of method1() begins with the statement "A" being printed to the console.
+The try block is executed, which prints "B" to the console.
+The statement "P[x] = 5;" generates an ArrayIndexOutOfBoundsException because x is greater than the length of the array.
+The catch block for ArrayIndexOutOfBoundsException is executed, which prints "D" to the console.
+The finally block is executed, which prints "F" to the console.
+The statement "G" is not executed because an exception occurred.
+
+b) What do you think would be printed after the second invocation to method1 (Line 48)? AEDF
+
+The method1() is invoked with a null array and an index 5.
+The execution of method1() begins with the statement "A" being printed to the console.
+The try block is executed, which prints "B" to the console.
+An exception occurs when trying to access the null array element, but the catch block for ArrayIndexOutOfBoundsException does not handle it because the exception type is different.
+The catch block for Exception is executed, which prints "E" to the console.
+The finally block is executed, which prints "F" to the console.
+The statement "G" is executed, which prints "G" to the console.
+
+c) What do you think would be printed after the third invocation to method1 (Line 53)? ABCFG
+
+The method1() is invoked with an array of size 7 and an index 3.
+The execution of method1() begins with the statement "A" being printed to the console.
+The try block is executed, which prints "B" to the console.
+The statement "P[x] = 5;" sets the value of the fourth element of the array to 5.
+The statement "C" is printed to the console.
+The finally block is executed, which prints "F" to the console.
+The statement "G" is executed, which prints "G" to the console.
+
+
+2.
+a) Was answer (1 a) incorrect? Yes
+b) Was answer (1 b) incorrect? Yes 
+c) Was answer (1 c) incorrect? Yes
+
+After commenting out line 10 and uncommenting line 11:
+3.
+a) What do you think would be printed after the first invocation to method1 (Line 43)? ADFG
+
+The method1() is invoked with an array of size 7 and an index 9 which is out of the array bounds.
+The execution of method1() begins with the statement "A" being printed to the console.
+The try block is executed, which prints "B" to the console.
+The statement "method2(P, x);" generates an ArrayIndexOutOfBoundsException because x is greater than the length of the array.
+The catch block for ArrayIndexOutOfBoundsException is executed, which prints "D" to the console.
+The finally block is executed, which prints "F" to the console.
+The statement "G" is executed, which prints "G" to the console.
+
+b) What do you think would be printed after the second invocation to method1 (Line 48)? AEXF
+
+The method1() is invoked with a null array and an index 5.
+The execution of method1() begins with the statement "A" being printed to the console.
+The try block is executed, which prints "B" to the console.
+An exception occurs when trying to access the null array element, and the catch block for Exception is executed, which prints "X" to the console.
+The finally block is executed, which prints "F" to the console.
+The statement "G" is executed, which prints "G" to the console.
+
+c) What do you think would be printed after the third invocation to method1 (Line 53)? ABCFG
+
+The method1() is invoked with an array of size 7 and an index 3.
+The execution of method1() begins with the statement "A" being printed to the console.
+The try block is executed, which prints "B" to the console.
+The statement "method2(P, x);" sets the value of the fourth element of the array to 5.
+The statement "C" is printed to the console.
+The finally block is executed, which prints "F" to the console.
+The statement "G" is executed, which prints "G" to the console.
+
+
+4. 
+a) Was answer (2 a) incorrect? Yes
+b) Was answer (2 b) incorrect? Yes
+c) Was answer (2 c) incorrect? No
+
+After commenting out line 11 and uncommenting line 12:
+5.
+a) What do you think would be printed after the first invocation to method1 (Line 43)? ABDF
+
+A is printed to the console.
+Inside the try block, B is printed to the console.
+An ArrayIndexOutOfBoundsException is thrown and caught by the first catch block, so D is printed to the console.
+Finally, F is printed to the console.
+G is not printed because the execution stops at the catch block.
+
+b) What do you think would be printed after the second invocation to method1 (Line 48)? ABEF
+
+A is printed to the console.
+Inside the try block, B is printed to the console.
+A NullPointerException is thrown and caught by the second catch block, so E is printed to the console.
+Finally, F is printed to the console.
+G is not printed because the execution stops at the catch block.
+
+c) What do you think would be printed after the third invocation to method1 (Line 53)? ABCFG
+
+A is printed to the console.
+Inside the try block, B is printed to the console.
+The assignment P[x] = 5; is executed without any exceptions.
+Finally, F is printed to the console.
+G is printed to the console.
+
+
+6. 
+a) Was answer (3 a) incorrect? Yes
+b) Was answer (3 b) incorrect? Yes
+c) Was answer (3 c) incorrect? Yes
+
+
+
+EXERCISE 2
+----------
+
+7. What is the difference between m1 and m2? Why is one showing a compiler error but not the other? 
+
+The main difference between the methods m1() and m2() is that m1() throws a checked exception (MyCheckedException), while m2() throws an unchecked exception (MyUncheckedException).
+Checked exceptions are those that must be explicitly handled or declared in the method signature, meaning that the method must either have a try-catch block to handle the exception or declare the 
+exception in the method signature. On the other hand, unchecked exceptions, also known as runtime exceptions, do not need to be declared or handled explicitly.
+In the code provided, if we call m1(5) without a try-catch block or without declaring MyCheckedException in the method signature, it will result in a compilation error. 
+In contrast, calling m2(5) will not cause a compilation error, and any potential exceptions thrown will only be caught at runtime.
+
+8. What is/are the suggested resolution(s) for this compiler error?
+
+The suggestion resolutions for this compiler error is to add a throws declaration 
+
+9. Look at the function calls to m1() and m2() from the main method. Based on the values sent in for the parameter t into these methods, would the exceptions be thrown when executed (assuming it would compile as is)?
+
+In the given code, both method calls to m1() and m2() are passing the value of 5 as the argument for the parameter t. 
+Therefore, neither of the methods will throw an exception as the if condition in each method will evaluate to false for t = 5.
+If we were to call m1() or m2() with a value of t greater than 10, then the corresponding exception would be thrown (MyCheckedException for m1() and MyUncheckedException for m2()).
+
+10. After adding the throws statement to the m1 method signature, why do you think there is a compiler error on Line 16 on the call to m1() from main()?
+
+Adding the text throws MyCheckedException in line 4 of the m1() method signature means that the method now declares that it may throw a checked exception of type MyCheckedException. This resolves the original compiler error because the compiler now knows that m1() may throw this exception and therefore requires the caller to either catch it or declare that it may throw it as well.
+
+However, when calling m1() from main(), there is no handling of the checked exception. Since m1() now declares that it may throw a checked exception and it is not being handled in main(), 
+the compiler reports an error saying that the exception must be caught or declared to be thrown. This is because checked exceptions are considered to be potentially recoverable and must be handled in some way, 
+either by catching and handling them or by declaring that they may be thrown further up the call stack.
+
+11. Why does "Bottom of m1" get printed in m1(15), but "Bottom of m2" does not get printed in m2(15)?
+
+In m2(), "Bottom of m2" does not get printed out because the exception thrown by the if-statement causes the program to immediately exit the method without executing any code after the throw statement. 
+When an exception is thrown, the program searches for a suitable catch block to handle it. If none is found in the current method, the program exits the method and looks for a catch block in the calling method. 
+This process continues until a suitable catch block is found or until the program terminates if no catch block can handle the exception. In this case, since there is no catch block in m2() to handle the exception, 
+the program exits the method without executing the last System.out.println statement.
+
+EXERCISE 3
+----------
+
+12. Why are there compiler errors in ArrayStack? What is the suggested resolution for this compiler error?
+
+There are compiler errors in ArrayStack because the push, peek, size, and isEmpty methods are missing their method signatures and implementations. 
+The code currently only contains the method names commented out, but there are no actual method bodies. This means that the code cannot be compiled until these methods are properly implemented.
+The suggested resolutions for this compiler error are to either implement the unimplemented methods, or make the type of ArrayStack abstract.
+
+13. Are there any methods in ArrayStack that are not included in the StackADT? Should this method be included in the ADT?
+
+There is one method in ArrayStack that is not included in the StackADT interface, which is the private method expandCapacity(). This method is used internally to expand the capacity of the stack when it becomes full. 
+Since this method is not part of the public interface of the stack, it does not need to be included in the ADT.
+Public methods that are part of the ADT should be included in the interface so that they can be implemented by different stack classes. 
+However, private methods or implementation details that are not meant to be accessed from outside the class do not need to be part of the ADT.
+
+14. Why does LinkedStack NOT contain a compiler error even though some methods are not implemented?
+
+LinkedStack does not contain a compiler error even though some methods are not implemented because all the methods listed in the StackADT interface are defined in the class. 
+The methods that are not implemented yet (pop, size, and isEmpty) have a placeholder return value of null, 0, and false respectively, which means that the methods are syntactically correct and conform to the interface. 
+However, the implementation is not complete, and the methods will not work correctly until they are properly implemented.

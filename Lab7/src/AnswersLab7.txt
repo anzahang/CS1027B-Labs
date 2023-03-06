@@ -1,0 +1,52 @@
+Answers for Lab 7
+-----------------------------------------------
+
+EXERCISE 1
+
+1. Which methods in the LinkedQueue class are taking in a parameter of the generic type T? The enqueue(T element), first(), and dequeue() methods in the LinkedQueue class are taking in a parameter of the generic type T.
+
+
+
+2. Which methods in the LinkedQueue class have a return type of the generic type T? The enqueue(T element), first(), and dequeue() methods in the LinkedQueue class have a return type of the generic type T.
+
+
+
+3. Suppose you didn't have an instance variable storing the current number of elements in the queue. How could you determine the number of elements for the size() method if such an instance variable was not available?
+If an instance variable storing the current number of elements in the queue is not available, we can iterate through the nodes of the queue, counting the number of nodes until we reach the end of the queue (when rear is reached).
+This way, we can determine the number of elements in the queue without relying on the count instance variable. 
+However, this would result in a less efficient implementation of the size() method since it requires iterating over the entire queue. 
+Therefore, it is preferable to have an instance variable that keeps track of the size of the queue, so that we can simply return that variable's value in constant time.
+
+
+
+EXERCISE 2
+
+4. Consider the possibility of using an Array Queue or a Circular Array Queue instead of the Linked Queue being used in this simulation. Would the simulation's results be impacted by switching to a different Queue implementation?
+The choice of queue implementation should not impact the simulation's results as long as the queue follows the first-in-first-out (FIFO) principle and provides the necessary operations for adding and removing elements 
+from the queue. The only difference between the queue implementations would be their performance characteristics, such as time complexity for adding and removing elements, memory usage, and scalability. 
+In general, Array Queues and Circular Array Queues can be more efficient in terms of memory usage and performance, but they have fixed sizes, which can limit their scalability. On the other hand, 
+Linked Queues are more flexible in terms of size, but they can have higher memory usage and slower performance due to the overhead of creating and maintaining nodes. 
+Therefore, the choice of queue implementation would depend on the specific requirements of the simulation, such as the expected number of elements and the frequency of queue operations.
+
+
+
+5. Which of these classes/methods would you have to modify if you were going to use one of the other queue implementations?
+If you were going to use one of the other queue implementations (Array Queue or Circular Array Queue), you would have to modify the LinkedQueue class and any methods that use it, such as the move() method in the Snail class, 
+to use the new implementation instead. You would also need to modify the SnailRace class constructor to instantiate the new queue implementation for each Snail object.
+
+
+
+EXERCISE 3
+
+6. What was the error message when you tried to load the next image after the image of musicians? Why is it crashing? The error is a EmptyCollectionException exception. This is occuring because the stack in which the 
+images are being popped from is empty and there were no more pictures in the stack anymore. So by inputting 'next' to pop the next element in the stack threw an exception because it was not able to pop another element from an 
+empty stack.
+
+
+
+7. When you try performing the "undo" operation (before modifying the code in GraphicSystem.java), does it work as expected? Why or why not? 
+Entering the command "undo" at this point will not do anything. This is because the undo() method is not yet implemented. 
+The program will print the message "No operation to undo." because the if statement in the undo() method checks if the operations stack is empty, which it is at this point. 
+We need to implement the undo() method to be able to undo the previous image changes.
+
+
